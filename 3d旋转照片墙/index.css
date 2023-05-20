@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    height: 100%;
+}
+body{
+    perspective: 800px;
+    transform-style: preserve-3d;
+    background: url("./img/bg.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+@keyframes imgmove{
+    0%{
+        transform: translate(-50%,-50%) rotateY(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotateY(360deg);
+    }
+}
+.wrapper{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    left: calc(50%);
+    top:calc(50%);
+    transform: translate(-50%,-50%);
+    animation: imgmove 10s cubic-bezier(0.5,0.5,1,1) infinite;
+}
+img{
+    width: 100%;
+    position: absolute;
+    /* backface-visibility: hidden;旋转背景墙的背部图片是否隐藏 */
+}
+img:nth-of-type(1){
+    transform: rotatey(40deg) translateZ(100px);
+}
+img:nth-of-type(2){
+    transform: rotatey(80deg) translateZ(150px);
+}
+img:nth-of-type(3){
+    transform: rotateY(120deg) translateZ(200px);
+}
+img:nth-of-type(4){
+    transform: rotateY(160deg) translateZ(250px);
+}
+img:nth-of-type(5){
+    transform: rotateY(200deg) translateZ(300px);
+}
+img:nth-of-type(6){
+    transform: rotateY(240deg) translateZ(350px);
+}
+img:nth-of-type(7){
+    transform: rotateY(280deg) translateZ(400px);
+}
+img:nth-of-type(8){
+    transform: rotateY(320deg) translateZ(450px);
+}
+img:nth-of-type(9){
+    transform: rotateY(360deg) translateZ(500px);
+}
+@keyframes pmove{
+    0%{
+        height: 100%;
+    }
+    100%{
+        height: 0px;
+    }
+}
+p{
+    position: absolute;
+    width: 20px;
+    height: 406px;
+    padding: 10px 0px;
+    left: 100px;
+    top:80px;
+    /* display: inline-block; */
+    writing-mode:tb-rl;/*竖直排列*/
+    color: #fff;
+    font-size: 18px;
+    font-family: monospace;
+    letter-spacing: 2px;/*字体间隙*/
+}
+p::after{
+    position: absolute;
+    left: 0;
+    bottom:0px;
+    width: 100%;
+    border: 1px solid transparent;
+    height: 100%;
+    content: "";
+    background:linear-gradient(to bottom,rgba(35,92,161),rgba(35,76,156));
+    animation: pmove 20s steps(20,end) infinite;
+}

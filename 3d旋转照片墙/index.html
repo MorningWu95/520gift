@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <img src="./img/1.jpg" alt="">
+        <img src="./img/2.jpg" alt="">
+        <img src="./img/3.jpg" alt="">
+        <img src="./img/4.jpg" alt="">
+        <img src="./img/5.jpg" alt="">
+        <img src="./img/6.jpg" alt="">
+        <img src="./img/7.jpg" alt="">
+        <img src="./img/8.jpg" alt="">
+        <img src="./img/9.jpg" alt="">
+    </div>
+    <p>520快乐！我亲爱的家人们，永远爱你们！</p>
+    <video src="./music.mp3" class="vid"></video>
+    <script>
+        document.body.onmousemove = function(e){
+            this.style.perspectiveOrigin = "" + e.pageX + "px " + e.pageY + "px";
+        }
+        var vid = document.querySelector(".vid");
+        document.body.onclick = function(){
+            if(vid.paused){
+                vid.play();
+            }else{
+                vid.pause();
+            }
+        }
+    </script>
+</body>
+</html>
